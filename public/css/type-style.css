@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+body {
+    font-family: "Noto Serif", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-size: 20px;
+    padding: 60px;
+    text-align: center;
+    color: #ffac42;
+    text-shadow: 2px 2px 8px #ffac42;
+}
+
+.title p {
+    text-align: justify;
+}
+
+nav {
+    background-color: #ffac42;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    padding: 0 5vw 0 5vw;
+}
+
+nav li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+nav a {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    font-size: 18px;
+}
+
+li a:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+}
+
+h1 {
+    font-family: "Dancing Script", Arial, Helvetica, sans-serif;
+}
+
+article {
+    display: flex;
+}
+
+article p {
+    text-align: justify;
+}
+
+h2 {
+    text-align: center;
+    font-family: "Dancing Script", Arial, Helvetica, sans-serif;
+}
+
+main {
+    overflow: auto;
+    padding: 5vh 10vw 10vh 10vw;
+}
+
+section p {
+    text-align: center;
+}
+
+.card {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 0 10px 0 10px
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
+section p {
+    text-align: center;
+}
+
+footer {
+    font-family: 'Dancing Script', Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bolder;
+    padding: 15px;
+    color: black;
+    background-color: #ffac42;
+    text-align: center;
+    font-weight: bold;
+}
