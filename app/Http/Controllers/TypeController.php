@@ -10,10 +10,10 @@ class TypeController extends Controller
     public function index(Type $type)
     {
         $data = [
-            'title'     => $type->name,
-            'subtitle'  => $type->subtitle,
-            'cover_path'     => $type->cover_path,
-            'dances'    => $type->dance
+            'title'      => $type->name,
+            'subtitle'   => $type->subtitle,
+            'cover_path' => $type->cover_path,
+            'dances'     => $type->dance
         ];
 
         return view('detail-type', $data);
