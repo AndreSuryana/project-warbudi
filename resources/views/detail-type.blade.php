@@ -33,7 +33,7 @@
                 <article id="jenis">
                     <a href="/dance/{{ $dance->slug }}">
                         <section class="card">
-                            <img src="{{ asset('images/balinese.png') }}" alt="">
+                            <img src="{{ $dance->image_path }}" alt="{{ $dance->name }}">
                             <h3>{{ $dance->name }}</h3>
                             {{-- <p>{!! implode(' ', array_slice(str_word_count($dance->description, 1), 0, 25)) !!} ...</p> --}}
                             <p>{!! $dance->description !!}</p>

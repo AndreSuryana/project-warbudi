@@ -27,11 +27,11 @@ class ControlPanelController extends Controller
             'description'   => 'required|min:10',
             'type_id'       => 'required|numeric',
             'video_link'    => 'required|min:5',
-            'images'        => 'file|image|max:2048'
+            'image_link'    => 'required|min:5'
         ]);
 
         // Store imges file
-        $imagePath = $request->file('images')->store('dance-images');
+        // $imagePath = $request->file('images')->store('dance-images');
 
         // Store validated data in array
         $danceData = [
@@ -41,7 +41,7 @@ class ControlPanelController extends Controller
             'description'   => $validated['description'],
             'type_id'       => $validated['type_id'],
             'video_link'    => $validated['video_link'],
-            'image_path'    => $imagePath,
+            'image_path'    => $validated['image_link']
         ];
 
         // dd($danceData);

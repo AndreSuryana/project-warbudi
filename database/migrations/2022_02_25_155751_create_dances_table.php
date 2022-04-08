@@ -21,7 +21,7 @@ class CreateDancesTable extends Migration
             $table->text('history');
             $table->text('description');
             $table->string('video_link');
-            $table->string('image_path')->default('/dance-images/dance-image-placeholder.jpg');
+            $table->string('image_path');
             $table->timestamps();
         });
     }

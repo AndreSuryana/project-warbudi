@@ -74,9 +74,9 @@
                 </div>
             @enderror
 
-            <label for="images">Gambar Tari*</label>
-            <input class="@error('images') is-invalid @enderror" type="file" name="images" id="images">
-            @error('images')
+            <label for="image_link"><b>Dance Images Link*</b></label>
+            <input class="@error('image_link') is-invalid @enderror" type="text" placeholder="Masukan link gambar tari" name="image_link" id="image_link">
+            @error('image_link')
                 <div class="small-error-message">
                     {{ $message }}
                 </div>

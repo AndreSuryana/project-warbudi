@@ -27,7 +27,7 @@
         <div id="content">
             <h2>{{ $name }}</h2>
             <section class="images">
-                <img src="{{ asset($image_path) }}" alt="{{ $name }}">
+                <img src="{{ $image_path }}" alt="{{ $name }}">
             </section>
 
             <section class="card" style="margin-top: 50px;">
