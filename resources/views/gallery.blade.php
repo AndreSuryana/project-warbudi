@@ -27,37 +27,20 @@
     </header>
 
     <main>
-        <section>
-            <div class="gallery">
-                <a target="_blank" href="{{ asset('images/SekarJepunUSD19c.jpg') }}">
-                    <img src="{{ asset('images/SekarJepunUSD19c.jpg') }}" alt="Cinque Terre" width="600" height="400">
-                </a>
-                <div class="desc">Add a description of the image here</div>
-            </div>
-            <div class="gallery">
-                <a target="_blank" href="{{ asset('images/SekarJepunUSD19c.jpg') }}">
-                    <img src="{{ asset('images/SekarJepunUSD19c.jpg') }}" alt="Cinque Terre" width="600" height="400">
-                </a>
-                <div class="desc">Add a description of the image here</div>
-            </div>
-            <div class="gallery">
-                <a target="_blank" href="{{ asset('images/SekarJepunUSD19c.jpg') }}">
-                    <img src="{{ asset('images/SekarJepunUSD19c.jpg') }}" alt="Cinque Terre" width="600" height="400">
-                </a>
-                <div class="desc">Add a description of the image here</div>
-            </div>
-            <div class="gallery">
-                <a target="_blank" href="{{ asset('images/SekarJepunUSD19c.jpg') }}">
-                    <img src="{{ asset('images/SekarJepunUSD19c.jpg') }}" alt="Cinque Terre" width="600" height="400">
-                </a>
-                <div class="desc">Add a description of the image here</div>
-            </div>
-            <div class="gallery">
-                <a target="_blank" href="{{ asset('images/SekarJepunUSD19c.jpg') }}">
-                    <img src="{{ asset('images/SekarJepunUSD19c.jpg') }}" alt="Cinque Terre" width="600" height="400">
-                </a>
-                <div class="desc">Add a description of the image here</div>
-            </div>
+        <section class="gallery-container">
+            @forelse ($dances as $dance)
+                <div class="gallery">
+                    <a target="_blank" href="{{ $dance->image_path }}">
+                        <img src="{{ $dance->image_path }}" alt="{{ $dance->name }}" width="600" height="400">
+                    </a>
+                    <div class="desc">{{ $dance->name }}</div>
+                </div>
+            @empty
+                <section class="empty">
+                    <img src="{{ asset('images/balinese.png') }}" alt="">
+                    <p>Maaf galeri tari belum tersedia!</p>
+                </section>
+            @endforelse
         </section>
     </main>
 
@@ -65,8 +48,15 @@
         <p>Warisan Budaya Digital</p>
     </footer>
     <style>
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            flex-direction: row;
+        }
+
         .gallery {
-            margin: 5px;
+            margin: 15px 5px 15px 5px;
             border: 1px solid #ccc;
             float: left;
             width: 280px;

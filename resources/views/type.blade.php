@@ -31,7 +31,7 @@
             Tari Bali tidak selalu bergantung pada alur cerita. Tujuan utama penari Bali adalah untuk menarikan tiap
             tahap gerakan dan rangkaian dengan ekspresi penuh. Kecantikan tari Bali tampak pada gerakan-gerakan yang
             abstrak dan indah.</p>
-        <article id="jenis">
+        <article>
             @foreach ($types as $type)
                 <a href="/type/{{ $type->slug }}" style="text-decoration: none; color: black;">
                     <section class="card">

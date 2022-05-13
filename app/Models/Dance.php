@@ -16,13 +16,10 @@ class Dance extends Model
      */
     protected $guarded = ['id'];
 
+    public $timestamps = true;
+
     public function type()
     {
         return $this->belongsTo(Type::class);
-    }
-
-    public function image()
-    {
-        return $this->hasMany(Image::class);
     }
 }

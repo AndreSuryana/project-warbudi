@@ -29,16 +29,12 @@
             <article>
                 <section >
                     <h2>Apa itu<br>Warisan Budaya Digital ?</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque aperiam dicta 
-                        adipisci minus molestias ea sint atque quos doloremque at! Quia accusantium quam 
-                        quas voluptatum, tempore consequuntur beatae repellendus atque.</p>
+                    <p><strong>Warisan Budaya Digital</strong> merupakan proses digitalisasi peninggalan berupa benda maupun non-benda yang memanfaatkan teknologi informasi. Warisan Budaya merupakan gambaran dari jati diri dan kehidupan masyarakat pada masa lampau dan diwariskan dari generasi sebelumnya serta dilestarikan untuk generasi yang akan datang.</p>
                 </section>
 
                 <section>
                     <h2>Tujuan dari<br>Warisan Budaya Digital</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus odit itaque 
-                        dignissimos officiis veniam, blanditiis dolorem dolor eveniet non possimus odio 
-                        debitis inventore porro tempora asperiores reprehenderit officia alias sequi.</p>
+                    <p>Tujuan dari <strong>Warisan Budaya Digital</strong> adalah untuk melestarikan warisan budaya yang dimiliki oleh sebuah daerah tertentu agar nantinya generasi penerus dapat mengetahui warisan budaya tersebut.</p>
                 </section>
 
                 <section class="images">

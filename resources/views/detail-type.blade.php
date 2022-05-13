@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/detail-type-style.css') }}">
     <link rel="icon" href="{{ asset('images/balinese.png') }}">
 </head>
+
 <body>
     <header>
         <div class="title" style="background: url({{ $cover_path }});">
@@ -35,9 +37,11 @@
                     <a href="/dance/{{ $dance->slug }}">
                         <section class="card">
                             <img src="{{ $dance->image_path }}" alt="{{ $dance->name }}">
-                            <h3>{{ $dance->name }}</h3>
-                            {{-- <p>{!! implode(' ', array_slice(str_word_count($dance->description, 1), 0, 25)) !!} ...</p> --}}
-                            <p>{!! $dance->description !!}</p>
+                            <div>
+                                <h3>{{ $dance->name }}</h3>
+                                {{-- <p>{!! implode(' ', array_slice(str_word_count($dance->description, 1), 0, 25)) !!} ...</p> --}}
+                                <p>{!! $dance->description !!}</p>
+                            </div>
                         </section>
                     </a>
                 </article>
@@ -55,4 +59,5 @@
         <p>Warisan Budaya Digital</p>
     </footer>
 </body>
+
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dance;
 use App\Models\Type;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,11 @@ class MainController extends Controller
 
     public function gallery()
     {
-        return view('gallery');
+        $data = [
+            'dances' => Dance::all()
+        ];
+
+        return view('gallery', $data);
     }
 
     public function contact()

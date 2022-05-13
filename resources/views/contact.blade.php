@@ -25,9 +25,9 @@
     </header>
 
     <main>
-        <div id="content">
+        <div>
             <h2>Anggota Tim</h2>
-            <article id="profile">
+            <article class="profile">
                 <section class="card">
                     <div class="image-container">
                         <img src="{{ asset('images/contact/udha.jpeg') }}" alt="">
