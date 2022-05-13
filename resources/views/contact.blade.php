@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warisan Budaya Digital</title>
     <link rel="stylesheet" href="{{ asset('css/contact-style.css') }}">
+    <link rel="icon" href="{{ asset('images/balinese.png') }}">
 </head>
 <body>
     <header>

@@ -90,14 +90,19 @@ main {
     color: #ffac42;
 }
 
-.card iframe {
-    float: right;
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-container iframe {
+    align-items: center;
     width: 40vw;
     height: calc(40vw * 9/16);
     max-width: 560;
     max-height: 315;
-    margin-top: 3em;
-    margin-left: 2em;
+    margin-top: 1em;
     margin-bottom: 1em;
 }
 

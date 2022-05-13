@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Control Panel - Project Warisan Budaya</title>
-    <link rel="icon" href="{{ asset('images/balinese.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/trix.css') }}">
     <script type="text/javascript" src="{{ asset('js/trix.js') }}"></script>
+    <link rel="icon" href="{{ asset('images/balinese.png') }}">
 </head>
 
 <body>
-    <form action="/control-panel" method="POST" enctype="multipart/form-data">
+    <form action="/control-panel/dance-edit/{{ $dance->slug }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="imgcontainer">
             <img src="{{ asset('images/balinese.png') }}" alt="Avatar" class="avatar">
@@ -32,7 +32,7 @@
             @endif
 
             <label for="name"><b>Nama Tari*</b></label>
-            <input class="@error('name') is-invalid @enderror" type="text" placeholder="Masukan nama tari" name="name" required>
+            <input class="@error('name') is-invalid @enderror" type="text" placeholder="Masukan nama tari" name="name" value="{{ $dance->name }}" required>
             @error('name')
                 <div class="small-error-message">
                     {{ $message }}
@@ -40,7 +40,7 @@
             @enderror
 
             <label for="history"><b>History*</b></label>
-            <input class="@error('history') is-invalid @enderror" id="history" type="hidden" name="history">
+            <input class="@error('history') is-invalid @enderror" id="history" type="hidden" name="history" value="{{ $dance->history }}">
             <trix-editor input="history" placeholder="Masukan sejarah tari"></trix-editor>
             @error('history')
                 <div class="small-error-message">
@@ -49,7 +49,7 @@
             @enderror
 
             <label for="description"><b>Description*</b></label>
-            <input id="description" type="hidden" name="description">
+            <input id="description" type="hidden" name="description"  value="{{ $dance->description }}">
             <trix-editor class="@error('description') is-invalid @enderror" input="description" placeholder="Masukan deskripsi tari"></trix-editor>
             @error('description')
                 <div class="small-error-message">
@@ -60,15 +60,21 @@
             <label><b>Jenis Tari</b></label>
             @foreach ($types as $type)
                 <div class="radio-input">
-                    <input type="radio" name="type_id" id="{{ $type->slug }}" value="{{ $type->id }}" required>
-                    <label for="{{ $type->slug }}">{{ $type->name }}</label>
+                    @if ($dance->type->slug == $type->slug)
+                        <input type="radio" name="type_id" id="{{ $type->slug }}" value="{{ $type->id }}" checked required>
+                        <label for="{{ $type->slug }}">{{ $type->name }}</label>
+                    @else
+                        <input type="radio" name="type_id" id="{{ $type->slug }}" value="{{ $type->id }}" required>
+                        <label for="{{ $type->slug }}">{{ $type->name }}</label>
+                    @endif
+                    
                 </div>
             @endforeach
 
             <br>
 
             <label for="video_link"><b>YouTube Video Link*</b><small style="color: #f44336"> (<em>id video saja!</em>)</small><br></label>
-            <input class="@error('video_link') is-invalid @enderror" type="text" placeholder="Masukan link video (contoh: zI3UT5T-zvA)" name="video_link" required>
+            <input class="@error('video_link') is-invalid @enderror" type="text" placeholder="Masukan link video (contoh: zI3UT5T-zvA)" name="video_link"  value="{{ $dance->video_link }}" required>
             @error('video_link')
                 <div class="small-error-message">
                     {{ $message }}
@@ -76,25 +82,16 @@
             @enderror
 
             <label for="image_link"><b>Dance Images Link*</b></label>
-            <input class="@error('image_link') is-invalid @enderror" type="text" placeholder="Masukan link gambar tari" name="image_link" id="image_link">
+            <input class="@error('image_link') is-invalid @enderror" type="text" placeholder="Masukan link gambar tari" name="image_link" id="image_link"  value="{{ $dance->image_path }}">
             @error('image_link')
                 <div class="small-error-message">
                     {{ $message }}
                 </div>
             @enderror
 
-            <button style="margin-top: 25px" class="button success" type="submit">Tambah Data Tari</button>
+            <button style="margin-top: 25px; margin-bottom: 25px;" class="button success" type="submit">Simpan Perubahan Tari</button>
         </div>
     </form>
-    <div class="container">
-        <a class="button info" href="/control-panel/dance-list" style="display: block; text-align: center; width:auto;">List Data Tari</a>
-    </div>
-    <div class="container">
-        <form action="/logout" method="POST">
-            @csrf
-            <button class="button danger" type="submit">Logout</button>
-        </form>
-    </div>
 
     <style>
         

@@ -44,3 +44,9 @@ Route::post('/control-panel', [ControlPanelController::class, 'store'])
     ->middleware('auth');
 Route::get('/control-panel/dance-list', [ControlPanelController::class, 'danceList'])
     ->middleware('auth');
+Route::get('control-panel/dance-edit/{dance:slug}', [ControlPanelController::class, 'viewDanceEdit'])
+    ->middleware('auth');
+Route::post('control-panel/dance-edit/{dance:slug}', [ControlPanelController::class, 'danceEdit'])
+    ->middleware('auth');
+Route::post('control-panel/dance-delete/', [ControlPanelController::class, 'delete'])
+    ->middleware('auth');
