@@ -38,9 +38,9 @@
                 </section>
 
                 <section class="images">
-                    <img src="{{ asset('images/balinese.png') }}" alt="">
-                    <img src="{{ asset('images/balinese.png') }}" alt="">
-                    <img src="{{ asset('images/balinese.png') }}" alt="">
+                    {{-- <img src="{{ asset('images/balinese.png') }}" alt=""> --}}
+                    <img src="{{ asset('images/warbudi-image.png') }}" alt="">
+                    {{-- <img src="{{ asset('images/balinese.png') }}" alt=""> --}}
                 </section>
             </article>
         </div>

@@ -12,10 +12,19 @@ class ControlPanelController extends Controller
     public function index()
     {
         $data = [
-            'types' => Type::all(),
+            'dances' => Dance::all()->sortBy('id'),
         ];
 
         return view('control-panel', $data);
+    }
+
+    public function viewDanceAdd()
+    {
+        $data = [
+            'types' => Type::all(),
+        ];
+
+        return view('dance-add', $data);
     }
 
     public function store(Request $request)
@@ -46,10 +55,10 @@ class ControlPanelController extends Controller
 
         // dd($danceData);
 
-        $storeStatus = Dance::insert($danceData);
+        $storeStatus = Dance::create($danceData);
 
         if (!$storeStatus) {
-            return redirect('/control-panel')
+            return redirect('/control-panel/dance-add')
                 ->with(['error' => 'Maaf gagal menginput data! Mohon coba lagi!']);
         }
 
@@ -113,11 +122,11 @@ class ControlPanelController extends Controller
 
         if (!$updateStatus) {
             return redirect('/control-panel/dance-edit/'.$dance->slug)
-                ->with(['error' => 'Maaf gagal menginput data! Mohon coba lagi!']);
+                ->with(['error' => 'Maaf gagal mengubah data! Mohon coba lagi!']);
         }
 
-        return redirect('/control-panel/dance-edit/'.$dance->slug)
-            ->with(['success' => 'Data berhasil di input!']);
+        return redirect('/control-panel')
+            ->with(['success' => 'Perubahan data tari berhasil dilakukan']);
     }
 
     public function delete(Request $request)
@@ -130,11 +139,11 @@ class ControlPanelController extends Controller
             $danceName = $dance->name;
             $dance->delete();
         } else {
-            return redirect('/control-panel/dance-list/')
-                ->with(['eror' => 'Tari' . $danceName . 'gagal dihapus!']);
+            return redirect('/control-panel')
+                ->with(['error' => 'Data ' . $danceName . ' gagal dihapus!']);
         }
 
-        return redirect('/control-panel/dance-list/')
-            ->with(['success' => 'Tari' . $danceName . 'berhasil dihapus!']);
+        return redirect('/control-panel')
+            ->with(['success' => 'Data ' . $danceName . ' berhasil dihapus!']);
     }
 }

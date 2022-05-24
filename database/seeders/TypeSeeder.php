@@ -9,30 +9,33 @@ class TypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-    *
+     *
      * @return void
      */
     public function run()
     {
-        $types = [
-            [
-                'slug'          => 'tari-wali',
-                'name'          => 'Tari Wali (Religius Dance)',
-                'subtitle'      => 'Lorem ipsum dolor sit amet sagittis augue, eleifend consequat mi nibh et',
-                'description'   => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quibusdam distinctio sed deserunt ab tempore ipsam nesciunt modi similique aperiam, iure provident, praesentium voluptates. Amet iste magnam odio accusamus nesciunt.'
-            ], [
-                'slug'          => 'tari-bebali',
-                'name'          => 'Tari Bebali (Ceremonial Dance)',
-                'subtitle'      => 'Lorem ipsum dolor sit amet sagittis augue, eleifend consequat mi nibh et',
-                'description'   => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quibusdam distinctio sed deserunt ab tempore ipsam nesciunt modi similique aperiam, iure provident, praesentium voluptates. Amet iste magnam odio accusamus nesciunt.'
-            ], [
-                'slug'          => 'tari-balih-balihan',
-                'name'          => 'Tari Balih-Balihan (Secular Dance)',
-                'subtitle'      => 'Lorem ipsum dolor sit amet sagittis augue, eleifend consequat mi nibh et',
-                'description'   => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quibusdam distinctio sed deserunt ab tempore ipsam nesciunt modi similique aperiam, iure provident, praesentium voluptates. Amet iste magnam odio accusamus nesciunt.'
-            ],
+        $wali = [
+            'slug'          => 'tari-wali',
+            'name'          => 'Tari Wali (Religius Dance)',
+            'subtitle'      => 'Tari Wali merupakan jenis tarian upacara atau tari sakral',
+            'description'   => 'Tari Wali merupakan jenis tarian upacara atau tari sakral, ditarikan pada setiap kegiatan Upacara Adat Hindu di Bali. Tarian Wali ini hanya di pentaskan di Pura pada area terdalam yang disebut (Jeroan).'
         ];
+        Type::create($wali);
+        
+        $bebali = [
+            'slug'          => 'tari-bebali',
+            'name'          => 'Tari Bebali (Ceremonial Dance)',
+            'subtitle'      => 'Tari Bebali adalah jenis-jenis tari yang difungsikan sebagai pengiring upacara keagamaan',
+            'description'   => 'Tari Bebali adalah jenis-jenis tari yang difungsikan sebagai pengiring upacara keagamaan yang dipentaskan pada hari-hari dan tempat-tempat tertentu yaitu di halaman tengan (jaba tengah) suatu pura dalam rangka piodalan.'
+        ];
+        Type::create($bebali);
 
-        Type::insert($types);
+        $balih = [
+            'slug'          => 'tari-balih-balihan',
+            'name'          => 'Tari Balih-Balihan (Secular Dance)',
+            'subtitle'      => 'Tari Balih-balihan adalah golongan seni tari yang difungsikan hanya untuk hiburan belaka',
+            'description'   => 'Tari Balih-balihan adalah golongan seni tari yang difungsikan hanya untuk hiburan belaka, dipentaskan di halaman paling luar pura (jaba sisi). Golongan seni tari seperti ini disebut dengan seni profane.'
+        ];
+        Type::create($balih);
     }
 }

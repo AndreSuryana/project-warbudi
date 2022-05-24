@@ -6,26 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warisan Budaya Digital</title>
-    <link rel="stylesheet" href="{{ asset('css/dance-list-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/control-panel-style.css') }}">
     <link rel="icon" href="{{ asset('images/balinese.png') }}">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css'
         integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=='
         crossorigin='anonymous' />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
-    <div class="sidenav">
-        <a href="#" style="padding-top: 54px; font-weight: bold;">List Data Tari</a>
-        <a href="/control-panel/dance-add/">Tambah Data Tari</a>
-    </div>
-
-    <header>
+    {{-- <header>
         <nav>
             <h1>Tari Bali</h1>
         </nav>
-    </header>
+    </header> --}}
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="sidebar_close()">Close &times;</button>
+        <a href="#" class="w3-bar-item w3-button">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+    </div>
 
-    <main>
+    <div class="w3-teal">
+        <button class="w3-button w3-teal w3-xlarge" onclick="sidebar_open()">☰</button>
+        <div class="w3-container">
+            <h1>My Page</h1>
+        </div>
+    </div>
+
+    {{-- <div class="sidenav">
+            <a href="/control-panel/dance-list/" style="padding-top: 54px; font-weight: bold;">List Data Tari</a>
+            <a href="/control-panel/dance-add/">Tambah Data Tari</a>
+            <form action="/logout" method="POST">
+                @csrf
+                <button class="btn danger" type="submit">Logout</button>
+            </form>
+        </div> --}}
+    <div>
+        <div class="alert success">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Success! </strong>{{ session('success') }}
+        </div>
         @if (session('success'))
             <div class="alert success">
                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
@@ -69,7 +90,7 @@
                 </tr>
             @endforelse
         </table>
-    </main>
+    </div>
 
     <style>
         /* The alert message box */
@@ -77,7 +98,6 @@
             padding: 20px;
             color: white;
             background-color: #f44336;
-            margin-bottom: 15px;
             opacity: 1;
             transition: opacity 0.6s;
             /* 600ms to fade out */
@@ -145,6 +165,14 @@
                     div.style.display = "none";
                 }, 600);
             }
+        }
+
+        function sidebar_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function sidebar_close() {
+            document.getElementById("mySidebar").style.display = "none";
         }
     </script>
 </body>

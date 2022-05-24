@@ -65,7 +65,7 @@ h2 {
 
 main {
     overflow: auto;
-    padding: 5vh 10vw 10vh 10vw;
+    padding: 5vh 10vw 5vh 10vw;
 }
 
 .card {
@@ -86,11 +86,10 @@ main {
 
 img {
     margin-top: 1em;
-    margin-bottom: 1em;
     margin-left: 1em;
     margin-right: 1em;
-    width: 250px;
-    height: 250px;
+    width: auto;
+    height: 300px;
     object-fit: cover;
 }
 

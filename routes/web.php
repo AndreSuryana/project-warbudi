@@ -45,7 +45,9 @@ Route::post('/logout', [UserController::class, 'logout']);
 // Control Panel routes (currently just add new item to database) :
 Route::get('/control-panel', [ControlPanelController::class, 'index'])
     ->middleware('auth');
-Route::post('/control-panel', [ControlPanelController::class, 'store'])
+Route::get('/control-panel/dance-add', [ControlPanelController::class, 'viewDanceAdd'])
+    ->middleware('auth');
+Route::post('/control-panel/dance-add', [ControlPanelController::class, 'store'])
     ->middleware('auth');
 Route::get('/control-panel/dance-list', [ControlPanelController::class, 'danceList'])
     ->middleware('auth');
