@@ -29,8 +29,10 @@
     <main>
         <div id="content">
             <h2>Penelusuran Tari</h2>
-            <input type="text" name="search_bar" id="search_bar" placeholder="Telusuri Tari. . .">
-            <br><br>
+            <form class="example" action="/type/{{ $type_slug }}" style="margin:auto;max-width:300px">
+                <input type="text" placeholder="Search.." name="search" id="search" value="{{ $search }}">
+                <button type="submit">Search</button>
+            </form>
 
             @forelse ($dances as $dance)
                 <article id="jenis">
@@ -58,6 +60,54 @@
     <footer>
         <p>Warisan Budaya Digital</p>
     </footer>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        form.example {
+            display: flex;
+        }
+
+        form.example input[type=text] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+            border: 1px solid black;
+            border-radius: 25px;
+        }
+
+        form.example button {
+            float: left;
+            width: auto;
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 17px;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+            border: 1px solid black;
+            border-radius: 25px;
+            margin-left: 15px;
+            background-color: #ffac42;
+        }
+
+        form.example button:hover {
+            background: #0b7dda;
+        }
+
+        form.example::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+    </style>
 </body>
 
 </html>
