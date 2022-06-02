@@ -68,7 +68,8 @@
 
         .gallery img {
             width: 100%;
-            height: auto;
+            height: 200px;
+            max-height: 200px;
         }
 
         .desc {
