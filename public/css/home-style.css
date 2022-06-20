@@ -11,6 +11,9 @@ body {
     text-align: center;
     color: #ffac42;
     text-shadow: 2px 2px 8px #ffac42;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 200px;
 }
 
 .title p {

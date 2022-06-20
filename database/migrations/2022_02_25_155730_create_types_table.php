@@ -18,7 +18,7 @@ class CreateTypesTable extends Migration
             $table->string('slug');
             $table->string('name');
             $table->string('subtitle');
-            $table->string('cover_path')->default('/images/SekarJepunUSD19c.jpg');
+            $table->string('cover_path')->default('/images/banner-warbudi.jpg');
             $table->text('description');
             $table->timestamps();
         });

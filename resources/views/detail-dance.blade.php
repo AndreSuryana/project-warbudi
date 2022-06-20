@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <div class="title" style="background: url({{ asset('images/SekarJepunUSD19c.jpg') }});">
+        <div class="title" style="background: url({{ asset('images/banner-warbudi.jpg') }});">
             <h1>{{ $title }}</h1>
             <p style="text-align: center;">{{ $subtitle }}</p>
         </div>

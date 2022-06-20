@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <div class="title" style="background: url({{ asset('images/SekarJepunUSD19c.jpg') }});">
+        <div class="title" style="background: url({{ asset('images/banner-warbudi.jpg') }});">
             <h1>Kontak Kami</h1>
             <p style="text-align: center;">Beragam Tarian Pulau Dewata dengan Beragam Makna</p>
         </div>

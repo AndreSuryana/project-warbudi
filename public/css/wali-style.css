@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
-
 body {
     font-family: "Noto Serif", Arial, Helvetica, sans-serif;
     margin: 0;
@@ -13,7 +12,7 @@ body {
     text-align: center;
     color: #ffac42;
     text-shadow: 2px 2px 8px #ffac42;
-    background: url(../assets/SekarJepunUSD19c.jpg);
+    background: url(../assets/banner-warbudi.jpg);
 }
 
 .title p {
