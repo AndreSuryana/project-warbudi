@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <div class="title" style="background: url({{ asset('images/banner-warbudi.jpg') }});">
+        <div class="title banner">
             <h1>Kontak Kami</h1>
             <p style="text-align: center;">Beragam Tarian Pulau Dewata dengan Beragam Makna</p>
         </div>
@@ -58,5 +58,12 @@
     <footer>
         <p>Warisan Budaya Digital</p>
     </footer>
+
+    <style>
+        .banner {
+            background: url({{ asset('images/banner-warbudi.jpg') }}) no-repeat center;
+            background-size: cover;
+        }
+    </style>
 </body>
 </html>

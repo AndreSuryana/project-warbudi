@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <div class="title" style="background: url({{ $cover_path }});">
+        <div class="title banner">
             <h1>{{ $title }}</h1>
             <p style="text-align: center;">{{ $subtitle }}</p>
         </div>
@@ -106,7 +106,12 @@
             clear: both;
             display: table;
         }
-
+        
+        .banner {
+            background: url({{ asset('images/banner-warbudi.jpg') }}) no-repeat center;
+            background-size: cover;
+        }
+        
     </style>
 </body>
 
